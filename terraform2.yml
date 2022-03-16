@@ -1,0 +1,31 @@
+org: ctdemo
+ops_email: demo@cloudtruth.com
+is_dev: false
+az_count: 2
+vpc_cidr: 10.10.0.0/16
+vpc_enable_nat: 1
+vpc_enable_redundant_nat: 0
+provider: aws
+logs_bucket: ctdemo-production-logs
+force_destroy_buckets: false
+skip_final_snapshot: false
+tf_var_default:
+  ami: ami-953d05g3
+  az: us-east-1a
+  instance_type: t1.medium
+  res_tag: {“Name”:“CT-Def-Instance”}
+tf_var_dev:
+  ami: ami-861d0j6y
+  az: us-west-2a
+  instance_type: t2.large
+  res_tag: {“Name”:“CT-Dev-Instance”}
+tf_var_stage:
+  ami: ami-431d0d3w
+  az: us-east-3d
+  instance_type: t3.xlarge
+  res_tag: {“Name”:“CT-Stage-Instance”}
+tf_var_prod:
+  ami: ami-378d0f9q
+  az: us-east-4a
+  instance_type: t4.2xlarge
+  res_tag: {“Name”:“CT-Prod-Instance”}
